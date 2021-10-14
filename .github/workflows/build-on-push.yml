@@ -1,0 +1,54 @@
+name: Build On Push
+
+on: [push, pull_request]
+
+jobs:
+  build-on-push:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout
+      with:
+        submodules: true
+        lfs: true
+
+    - name: Setup NDK
+      id: setup-ndk
+      uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: r22b
+
+    - name: Install python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+    - name: Install python dependencies
+      run: |
+        cd scripts
+        pip install -r requirements.txt
+
+    - name: Install mod dependencies
+      run: python scripts/install_deps.py
+
+    - name: Build mod
+      run: python scripts/builder.py
+      env:
+        NDK_PATH: ${{ steps.setup-ndk.outputs.ndk-path }}
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: beat-singer
+        path: ${{github.workspace}}/beat-singer.qmod
+
+    - name: Publish new version
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        draft: true
+        prerelease: false
+        files: |
+          beat-singer.qmod

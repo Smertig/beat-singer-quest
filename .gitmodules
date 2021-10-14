@@ -1,0 +1,3 @@
+[submodule "extern/rcmp"]
+	path = extern/rcmp
+	url = https://github.com/Smertig/rcmp
