@@ -8,9 +8,9 @@ Direct port of [BeatSinger](https://github.com/71/BeatSinger) for Oculus Quest.
 
 ## Installation
 
-:warning: **Be careful, this mod is not yet stable. It may crash your game, sorry for that.** 
+:warning: **Be careful, this mod is under heavy development (is NOT stable yet). It may crash your game, sorry for that.** 
 
- - Download `beat-singer.qmod` from [releases](https://github.com/Smertig/among-us-replayer/releases) based on your game version
+ - Download `beat-singer.qmod` from [releases](https://github.com/Smertig/beat-singer-quest/releases) based on your game version
  - Install it using [BMBF](https://beatsaberquest.com/)
 
 ## Credits
