@@ -4,7 +4,7 @@ BeatSinger is a mod that displays song lyrics while playing Beat Saber.
 
 Direct port of [BeatSinger](https://github.com/71/BeatSinger) for Oculus Quest.
 
-[Demo](https://youtu.be/p0JlkPKvjBg)
+[![Demo](extra/demo.webp)](https://youtu.be/p0JlkPKvjBg)
 
 ## Installation
 
