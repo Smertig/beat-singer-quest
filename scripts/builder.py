@@ -8,7 +8,7 @@ import subprocess
 
 BUILD_FOLDER_NAME = '_build'
 FULL_REBUILD      = True
-IS_DEBUG          = True
+IS_DEBUG          = os.getenv('BEAT_SINGER_DEBUG') == '1'
 NDK_PATH          = os.getenv('NDK_PATH')
 ANDROID_ABI       = 'arm64-v8a'
 ANDROID_PLATFORM  = 25
