@@ -41,7 +41,7 @@ jobs:
     - name: Upload artifacts (debug)
       uses: actions/upload-artifact@v2
       with:
-        name: beat-singer
+        name: beat-singer-debug
         path: ${{github.workspace}}/beat-singer.qmod
 
     - name: Build mod (release)
@@ -53,7 +53,7 @@ jobs:
     - name: Upload artifacts (release)
       uses: actions/upload-artifact@v2
       with:
-        name: beat-singer
+        name: beat-singer-release
         path: ${{github.workspace}}/beat-singer.qmod
 
     - name: Publish new version
